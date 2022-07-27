@@ -1,0 +1,18 @@
+on: [pull_request]
+
+jobs:
+  code-scan:
+    runs-on: ubuntu-latest
+    name: security-tooling
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+          path: "repo"
+      - name: Check for hardcoded secrets
+        uses: 6a6f6a6f/action@main
+        with:
+          path: repo
+          base: ${{ github.event.repository.default_branch }}
+          head: ${{ github.event.pull_request.head.sha }}

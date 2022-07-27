@@ -1,0 +1,25 @@
+name: "TruffleHog"
+description: "Run TruffleHog in current branch context"
+inputs:
+  path:
+    description: Repository path
+    required: true
+  base:
+    description: Start scanning from here (usually main branch).
+    required: true
+  head:
+    description: Scan commits until here (usually dev branch).
+    required: true
+branding:
+  icon: "shield"
+  color: "green"
+runs:
+  using: "docker"
+  image: "Dockerfile"
+  args:
+    - file://${{ inputs.path }}
+    - --since-commit
+    - ${{ inputs.base }}
+    - --branch
+    - ${{ inputs.head }}
+    - --fail
