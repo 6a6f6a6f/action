@@ -20,7 +20,7 @@ runs:
     - git
     - file://${{ inputs.path }}
     - --since-commit
-    - ${{ inputs.base }}
-    - --branch
     - ${{ inputs.head }}
+    - --branch
+    - ${{ inputs.base }}
     - --fail
