@@ -4,8 +4,8 @@ inputs:
   path:
     description: Repository path
     required: true
-  base:
-    description: Start scanning from here (usually main branch).
+  branch:
+    description: Start scanning from here (usually main).
     required: true
   head:
     description: Scan commits until here (usually dev branch).
@@ -24,9 +24,9 @@ runs:
   args:
     - git
     - file://${{ inputs.path }}
-    - --since-commit
-    - ${{ inputs.base }}
     - --branch
+    - ${{ inputs.branch }}
+    - --since-commit
     - ${{ inputs.head }}
     - --fail
     - ${{ inputs.extra }}
