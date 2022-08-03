@@ -9,7 +9,12 @@ inputs:
     required: true
   head:
     description: Scan commits until here (usually dev branch).
-    required: true
+    required: false
+    default: ''
+  extra:
+    required: false
+    default: ''
+    description: Extra args to be passed to the trufflehog cli.
 branding:
   icon: "shield"
   color: "green"
@@ -24,3 +29,4 @@ runs:
     - --branch
     - ${{ inputs.head }}
     - --fail
+    - ${{ inputs.extra }}
