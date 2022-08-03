@@ -7,10 +7,9 @@ inputs:
   branch:
     description: Start scanning from here (usually main).
     required: true
-  head:
-    description: Scan commits until here (usually dev branch).
-    required: false
-    default: ''
+  # head:
+  #   description: Scan commits until here (usually dev branch).
+  #   required: false
   extra:
     required: false
     default: ''
@@ -26,7 +25,7 @@ runs:
     - file://${{ inputs.path }}
     - --branch
     - ${{ inputs.branch }}
-    - --since-commit
-    - ${{ inputs.head }}
+    # - --since-commit
+    # - ${{ inputs.head }}
     - --fail
     - ${{ inputs.extra }}
