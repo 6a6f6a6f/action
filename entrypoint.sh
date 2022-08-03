@@ -2,7 +2,8 @@
 
 ARGS="$*"
 
-echo "Running on version $(/tmp/trufflehog --version)"
+VERSION=$(/tmp/trufflehog --version)
+echo "Running on $VERSION"
 echo "Arguments: $ARGS"
 
 /tmp/trufflehog git "$ARGS"
