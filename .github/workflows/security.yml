@@ -14,5 +14,5 @@ jobs:
         uses: 6a6f6a6f/action@main
         with:
           path: ./
-          base: ${{ github.event.repository.default_branch }}
-          head: HEAD~
+          branch: ${{ github.event.repository.default_branch }}
+          head: HEAD
