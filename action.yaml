@@ -9,7 +9,7 @@ inputs:
     required: true
   head:
     description: Scan commits until here (usually dev branch).
-    required: false
+    required: true
 branding:
   icon: "shield"
   color: "green"
@@ -20,7 +20,7 @@ runs:
     - git
     - file://${{ inputs.path }}
     - --since-commit
-    - ${{ inputs.head }}
-    - --branch
     - ${{ inputs.base }}
+    - --branch
+    - ${{ inputs.head }}
     - --fail
