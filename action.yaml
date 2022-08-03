@@ -17,6 +17,7 @@ runs:
   using: "docker"
   image: "Dockerfile"
   args:
+    - git
     - file://${{ inputs.path }}
     - --since-commit
     - ${{ inputs.base }}

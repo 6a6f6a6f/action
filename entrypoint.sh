@@ -1,9 +1,11 @@
 #! /usr/bin/env sh
 
-ARGS="$*"
-
 VERSION=$(/tmp/trufflehog --version)
 echo "Running on $VERSION"
-echo "Arguments: $ARGS"
+echo "Arguments: $*" 
 
-/tmp/trufflehog git "$ARGS"
+# /tmp/trufflehog git "$ARGS"
+
+# shellcheck disable=SC2048
+# shellcheck disable=SC2086
+/tmp/trufflehog $*
