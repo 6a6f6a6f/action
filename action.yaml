@@ -9,7 +9,7 @@ inputs:
     required: true
   head:
     description: Scan commits until here (usually dev branch).
-    required: true
+    required: false
 branding:
   icon: "shield"
   color: "green"
