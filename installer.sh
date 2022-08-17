@@ -37,4 +37,3 @@ fi
 DOWNLOAD_PATH="/tmp/trufflehog.tar.gz"
 wget "$TARGET" -O "$DOWNLOAD_PATH"
 tar zxf "$DOWNLOAD_PATH" -C /tmp
-echo "/tmp" >>"$GITHUB_PATH"
