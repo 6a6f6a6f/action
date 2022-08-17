@@ -8,6 +8,4 @@ RUN apk add --no-cache git curl
 RUN chmod +x /installer.sh
 RUN chmod +x /entrypoint.sh
 
-RUN /installer.sh
-
 ENTRYPOINT ["/entrypoint.sh"]
