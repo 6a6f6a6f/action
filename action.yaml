@@ -22,10 +22,10 @@ runs:
   using: "docker"
   image: "Dockerfile"
   args:
+    - ${{ inputs.version }}
     - git
     - file://${{ inputs.path }}
     - --branch
     - ${{ inputs.branch }}
     - --fail
     - ${{ inputs.extra }}
-    - ${{ inputs.version }}
