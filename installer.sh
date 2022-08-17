@@ -1,4 +1,4 @@
-#! /usr/bin/env sh
+#! /usr/bin/env bash
 
 VERSION="$1"
 if [ ! "$VERSION" ]; then
@@ -28,6 +28,11 @@ for REMOTE in $REMOTES; do
         break
     fi
 done
+
+if [ ! "$TARGET" ]; then
+    echo "The version \"$VERSION\" is not available as a target on the TruffleHog release history."
+    exit 1
+fi
 
 DOWNLOAD_PATH="/tmp/trufflehog.tar.gz"
 wget "$TARGET" -O "$DOWNLOAD_PATH"
