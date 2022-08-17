@@ -28,3 +28,4 @@ runs:
     - ${{ inputs.branch }}
     - --fail
     - ${{ inputs.extra }}
+    - ${{ inputs.version }}
