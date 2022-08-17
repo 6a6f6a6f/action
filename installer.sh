@@ -1,6 +1,7 @@
 #! /usr/bin/env sh
 
-echo "$*"
+echo "Arguments: $*"
+exit 1
 
 REMOTES=$(
     curl -s https://api.github.com/repos/trufflesecurity/trufflehog/releases |
@@ -13,8 +14,6 @@ TARGET=""
 for REMOTE in $REMOTES; do
   echo "Target: $REMOTE"
 done
-
-exit 1
 
 DOWNLOAD_PATH="/tmp/trufflehog.tar.gz"
 wget "$TARGET" -O "$DOWNLOAD_PATH"
