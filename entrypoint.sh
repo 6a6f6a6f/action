@@ -8,4 +8,4 @@ VERSION=$(echo "$*" |cut -d " " -f 1)
 
 # shellcheck disable=SC2048
 # shellcheck disable=SC2086
-/tmp/trufflehog "${ARGS[*]}"
+/tmp/trufflehog ${ARGS[*]}
