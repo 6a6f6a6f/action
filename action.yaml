@@ -2,18 +2,19 @@ name: "TruffleHog"
 description: "Run TruffleHog in current branch context"
 inputs:
   path:
+    required: true
     description: Repository path
-    required: true
   branch:
-    description: Start scanning from here (usually main).
     required: true
-  # head:
-  #   description: Scan commits until here (usually dev branch).
-  #   required: false
+    description: Start scanning from here (usually main).
+  version:
+    required: false
+    description: Witch version of TruffleHog will be used.
+    default: latest
   extra:
     required: false
-    default: ''
     description: Extra args to be passed to the trufflehog cli.
+    default: ''
 branding:
   icon: "shield"
   color: "green"
@@ -25,7 +26,5 @@ runs:
     - file://${{ inputs.path }}
     - --branch
     - ${{ inputs.branch }}
-    # - --since-commit
-    # - ${{ inputs.head }}
     - --fail
     - ${{ inputs.extra }}
